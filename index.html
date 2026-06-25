@@ -1,0 +1,214 @@
+
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Sagar K | Portfolio OS</title>
+  <meta name="description" content="Sagar K's interactive portfolio website designed like a modern desktop operating system." />
+  <meta name="keywords" content="Sagar K, Digital Marketing Executive, SEO Specialist, Portfolio, Web Developer" />
+  <meta name="author" content="Sagar K" />
+
+  <meta property="og:title" content="Sagar K | Portfolio OS" />
+  <meta property="og:description" content="Explore Sagar K's portfolio through a modern OS-style desktop experience." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="assets/images/profile.png" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Sagar K | Portfolio OS" />
+  <meta name="twitter:description" content="A premium operating-system inspired personal portfolio." />
+
+  <link rel="icon" href="assets/images/profile.png" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Sagar K",
+    "jobTitle": "Digital Marketing Executive",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Bengaluru",
+      "addressCountry": "India"
+    },
+    "sameAs": [
+      "https://linkedin.com",
+      "https://github.com"
+    ]
+  }
+  </script>
+</head>
+
+<body>
+  <!-- LOCK SCREEN -->
+<!-- LOCK SCREEN -->
+<section id="lockScreen" class="screen lock-screen">
+  <div class="lock-card lock-idle">
+    <img id="lockProfileImage" src="assets/images/profile.png" alt="Sagar Profile" loading="lazy">
+    <h1 id="lockTime">00:00</h1>
+    <p id="lockDate">Loading date...</p>
+    <div class="unlock-instructions">
+  <span>Scroll up to unlock</span>
+  <small>or</small>
+  <span>Double-click anywhere</span>
+</div>
+  </div>
+</section>
+
+<!-- LOGIN SCREEN -->
+<section id="loginScreen" class="screen login-screen hidden">
+  <div class="login-card">
+    <img id="loginProfileImage" src="assets/images/profile.png" alt="Sagar Profile" loading="lazy">
+    <h2>Welcome Back, Sagar</h2>
+
+    <input
+      id="passwordInput"
+      class="login-input"
+      type="password"
+      placeholder="Type your name as password"
+      autocomplete="off"
+    >
+
+    <button id="loginBtn" class="primary-btn">Login</button>
+
+    <button id="hintBtn" class="hint-btn">Need a hint?</button>
+    <p id="hintText" class="hint-text hidden">Type my first name</p>
+  </div>
+</section>
+
+  <!-- BOOT SCREEN -->
+  <section id="bootScreen" class="screen boot-screen hidden">
+    <div class="boot-card">
+      <img src="assets/images/profile.png" alt="Sagar Logo" loading="lazy">
+      <h2>Portfolio OS</h2>
+      <p>Loading Sagar's Dashboard...</p>
+      <div class="boot-progress">
+        <span></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- DESKTOP -->
+  <main id="desktop" class="desktop hidden">
+    <div class="desktop-overlay"></div>
+
+    <!-- DESKTOP ICONS -->
+    <section id="desktopIcons" class="desktop-icons"></section>
+
+    <!-- PROFESSIONAL STATUS NOTIFICATION -->
+    <section id="statusNotification" class="status-notification">
+      <span id="statusIcon">📈</span>
+      <div>
+        <small id="statusLabel">Currently Working As</small>
+        <strong id="statusTitle">Digital Marketing Executive</strong>
+      </div>
+    </section>
+
+    <!-- DESKTOP WIDGETS -->
+    <aside class="desktop-widgets">
+      <div class="glass-widget weather-widget">
+        <span class="widget-icon">☁️</span>
+        <div>
+          <h4 id="weatherTemp">28°C</h4>
+          <p id="weatherCity">Bengaluru</p>
+        </div>
+      </div>
+
+      <div class="glass-widget calendar-widget">
+        <h4 id="calendarMonth">Month</h4>
+        <div id="calendarGrid" class="calendar-grid"></div>
+      </div>
+
+      <div class="glass-widget notes-widget">
+        <div class="widget-header">
+          <h4>Sticky Notes</h4>
+          <button id="addNoteBtn">+</button>
+        </div>
+        <div id="notesList"></div>
+      </div>
+
+      <div class="glass-widget visitor-widget">
+        <h4>Visitor Counter</h4>
+        <p>Total Visits: <strong id="totalVisits">0</strong></p>
+        <p>Today's Visits: <strong id="todayVisits">0</strong></p>
+      </div>
+    </aside>
+
+    <!-- SOCIAL DOCK -->
+    <aside id="socialDock" class="social-dock"></aside>
+
+    <!-- WINDOWS LAYER -->
+    <section id="windowsLayer" class="windows-layer"></section>
+
+    <!-- START MENU -->
+    <aside id="startMenu" class="start-menu">
+      <div class="start-profile">
+        <img id="startProfileImage" src="assets/images/profile.png" alt="Profile" loading="lazy">
+        <div>
+          <h4 id="startProfileName">Sagar K</h4>
+          <p id="startProfileRole">Digital Marketing Executive</p>
+        </div>
+      </div>
+
+      <input id="startSearch" class="form-control start-search" type="search" placeholder="Search portfolio..." />
+
+      <div id="startSearchResults" class="start-search-results"></div>
+
+      <div id="startApps" class="start-apps"></div>
+
+      <button id="shutdownBtn" class="shutdown-btn">⏻ Shutdown</button>
+    </aside>
+
+    <!-- TASKBAR -->
+    <nav class="taskbar">
+      <button id="startBtn" class="taskbar-btn" title="Start">⊞</button>
+      <button id="taskSearchBtn" class="taskbar-btn" title="Search">🔍</button>
+
+      <div id="runningApps" class="running-apps"></div>
+
+      <div class="taskbar-right">
+        <button id="quickThemeBtn" class="taskbar-btn" title="Theme">🌙</button>
+        <button id="soundToggleBtn" class="taskbar-btn" title="Sound">🔊</button>
+
+        <div class="task-time">
+          <span id="taskClock">00:00</span>
+          <small id="taskDate">Date</small>
+        </div>
+      </div>
+    </nav>
+
+    <!-- CUSTOM CONTEXT MENU -->
+    <div id="contextMenu" class="context-menu">
+      <button>View</button>
+      <button id="refreshDesktopBtn">Refresh</button>
+      <button id="personalizeBtn">Personalize</button>
+    </div>
+    <button id="floatingAiBtn" class="floating-ai-btn" title="Open Sagar AI">
+  🤖
+</button>
+  </main>
+
+  <!-- TOAST CONTAINER -->
+  <div id="toastContainer" class="toast-container-os"></div>
+
+  <!-- LIGHTBOX -->
+  <div id="lightbox" class="lightbox hidden">
+    <button id="closeLightbox">×</button>
+    <img id="lightboxImage" src="" alt="Certificate preview">
+  </div>
+
+  <!-- NOTIFICATION SOUND -->
+  <audio id="notificationSound" preload="auto">
+    <source src="assets/audio/windows.mp3" type="audio/mpeg">
+  </audio>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
+<script src="script.js" defer></script>
+<script src="ai.js" defer></script>
+<script type="module" src="firebase-ai-history.js"></script>>
+<script src="ai.js" defer></script>
+</body>
+</html>
